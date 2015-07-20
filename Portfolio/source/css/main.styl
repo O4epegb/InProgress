@@ -1,0 +1,280 @@
+// Colors
+$background = #1d1f21
+$current = #282a2e
+$selection = #373b41
+$white = #c5c8c6 
+$comment = #969896
+$red = #cc6666
+$orange = #de935f
+$yellow = #f0c674
+$green = #b5bd68
+$aqua = #8abeb7
+$blue = #81a2be
+$purple = #b294bb
+
+
+body 
+	background-color $background
+	font-size 16px
+	
+h2
+	font-size 26px
+	
+.header-wrapper, .footer-wrapper
+	background-color $current
+	border-top 2px $red solid
+	
+.header-border-red
+	border-top 2px $red solid
+	
+.header-border-aqua
+	border-top 2px $aqua solid
+	
+.header-border-yellow
+	border-top 2px $yellow solid	
+	
+.header-wrapper	
+	position fixed
+	z-index 5
+	top 0
+	left 0
+	width 100%
+	
+.menu 
+	ul
+		margin 0
+		padding 0
+		font-size 0
+	li
+		display inline-block
+		width 33%	
+		text-align center
+		height 60px
+		padding-top 18px
+		font-size 16px
+	.active 
+		background-color $selection
+	a
+		position relative
+		
+.menu ul>li:nth-of-type(1) a
+		color $red
+		
+.menu ul>li:nth-of-type(2) a
+		color $aqua
+		
+.menu ul>li:nth-of-type(3) a
+		color $green
+		
+.menu a:before
+	content ">"
+	width 20px
+	height 20px
+	position absolute
+	left -40px
+	opacity 0
+	transition .2s all ease-out
+		
+.menu a:hover:before
+	opacity 1
+	left -20px
+		
+.section
+	text-align center
+	padding-top 30px
+	padding-bottom 30px
+		
+.section 
+	h2
+		letter-spacing 5px
+	p
+		color $comment
+		margin-bottom 40px
+	&.projects
+		color $red
+		margin-top 60px
+	&.skills
+		color $aqua
+		background-color lighten($background,2%)
+		
+.item
+	position relative
+	width 300px
+	height 300px
+	background-color white
+	margin auto
+	margin-bottom 10px
+	
+.item-details
+	position relative
+	opacity 0
+	background-color rgba(29, 31, 33, .8)
+	color white
+	height 300px
+	padding-top 54px
+	transition all .3s ease-in-out
+	
+.item-details 
+	header
+		font-size 26px
+		text-transform uppercase
+		border-bottom 1px solid $white
+	p 
+		width 72%
+		margin 10px auto
+		line-height 1.4
+		color white
+	
+
+.item-button
+	display inline-block
+	position relative
+	padding 5px 15px
+	margin-top 10px
+	text-decoration none
+	color $white
+	background-color $current
+	border-radius 20px
+	z-index 2
+	border $white 1px solid
+	&:hover
+		background-color $white
+		color $current
+		
+.min-button
+		display none
+		margin-bottom 10px
+		font-size 25px
+		color $orange
+		
+.item
+	background url(https://www.jinx.com/content/prod/4063p_0c_2b.jpg) no-repeat
+	background-size cover
+	
+.sedona
+	background-image url(../img/sedona.jpg)
+	background-repeat no-repeat
+	background-size cover
+	
+.golden
+	background-image url(../img/golden.jpg)
+	background-repeat no-repeat
+	background-size cover
+	
+.slack
+	background-image url(../img/slack.jpg)
+	background-repeat no-repeat
+	background-position center center
+	background-size cover
+	p
+		font-size 14px
+	
+.fudi
+	background-image url(../img/Fudi.jpg)
+	background-repeat no-repeat
+	background-size cover	
+	
+.testtask
+	background-image url(../img/testtask.png)
+	background-repeat no-repeat
+	background-size cover	
+	
+.overlay
+	position absolute
+	top 0
+	left 0
+	width 300px
+	height 300px
+	z-index 1
+	outline 0
+	transition .6s ease-out
+	transform scale(1)
+	background-image url(../img/oct.png)
+	background-repeat no-repeat
+	background-position 0 0
+	background-size cover
+	
+.item:hover .item-details 
+	opacity 1
+
+
+.item:hover .overlay 
+	transform scale(1.07)
+	
+.skills-set
+	margin-bottom 50px
+	
+.skills-set 
+	a
+		display inline-block
+		margin-left 20px
+		margin-bottom 20px
+	img
+		height auto
+		max-width 80px
+	p
+		display inline-block
+		font-size 20px
+		color $purple
+		
+.github
+		background-color rgba(197, 200, 198, .2)
+		border-radius 50%
+		
+.footer-wrapper
+	padding-top 40px
+	padding-bottom 20px
+		
+.photo
+	width 80px
+	height 80px
+	border-radius 50%
+	float left
+	display block
+	
+.footer-wrapper
+	h3
+		margin-top 0
+		font-weight normal
+	h3, p
+		margin-left 95px
+		color $comment
+		max-width 400px
+		
+.email
+	color $orange
+	
+.mobile
+	color $blue
+	
+.social
+	li
+		display block
+		width 60px
+		height 60px
+		background-color $red
+		text-align center
+		border-radius 3px
+		margin-bottom 10px
+	a
+		display block
+		line-height 60px
+		color $white
+		font-size 36px
+	ul
+		padding 0
+		margin 0
+		
+.social-linked:hover
+	color #1b86bd
+	
+.social-github:hover
+	color $current
+	
+.social-hh
+	font-weight bold
+	
+.social-hh:hover
+	color #d71920
+
+

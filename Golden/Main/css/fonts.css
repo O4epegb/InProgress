@@ -1,0 +1,48 @@
+@font-face {
+	font-family: "WisdomScript";
+	src: url("../fonts/WisdomScript/WisdomScript.otf");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "MontserratBold";
+	src: url("../fonts/Montserrat/MontserratBold.otf");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "MontserratRegular";
+	src: url("../fonts/Montserrat/MontserratRegular.otf");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "DroidSerif";
+	src: url("../fonts/DroidSerif/DroidSerif.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "DroidSerifBold";
+	src: url("../fonts/DroidSerif/DroidSerifBold.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "DroidSerifBoldItalic";
+	src: url("../fonts/DroidSerif/DroidSerifBoldItalic.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "DroidSerifItalic";
+	src: url("../fonts/DroidSerif/DroidSerifItalic.ttf");
+	font-style: normal;
+	font-weight: normal;
+}

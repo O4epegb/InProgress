@@ -1,0 +1,281 @@
+[class^="col-"]
+    padding-left 0
+    padding-right 0
+	
+$green = #80af65
+$black  = #364442
+$grey = #546a67
+$lightgrey = #8dafb8
+$mediumgrey = #808080
+$bggrey = #fafafa
+$blue = #33aadd
+$yellow = #ffcc55
+$red = #f16a63
+$border = #e6e6e6
+
+body
+	font-family 'Lato', sans-serif
+
+.top-header
+	background-color $green
+	
+.top-header
+	img
+		float left
+		margin 15px
+	p
+		margin 0
+		float right
+		margin-top 20px
+		margin-right 10px
+		color #fff
+.avatar
+	height 30px
+	width 30px
+	background-color #fff
+	border-radius 3px
+	display inline-block
+	float right
+	margin-top 15px
+	margin-right 10px
+		
+.column-left, .column-right
+	background-color $bggrey
+	
+.column-right
+	border-left 1px solid $border
+		
+.game-name
+	background-color $black
+	text-align center
+	position relative
+	border-bottom 1px solid $border
+	
+.game-name
+	img
+		display inline-block
+		margin-top -15px
+		margin-right 10px
+	h1
+		display inline-block
+		color #fff
+		font-size 32px
+		text-transform uppercase
+		line-height 100px
+		margin 0
+		letter-spacing 2px
+	.game-name__help
+		position absolute
+		top 35px
+		right 25px
+		width 35px
+		height 35px
+		border-radius 50%
+		background-color #fff
+		font-size 25px
+		font-weight bold
+		cursor pointer
+		
+.section-header
+	background-color $bggrey
+	border-bottom 1px solid $border
+	padding-top 30px
+	padding-bottom 10px
+	letter-spacing 2px
+	
+.section-header
+	h2
+		text-transform uppercase
+		font-size 24px
+		color $grey
+		margin 0
+		text-align center
+		
+.section-content
+	text-align center
+	background-color #fff
+	padding-top 30px
+	padding-bottom 30px
+	border-bottom 1px solid $border
+	
+.game-number
+	text-transform uppercase
+	font-size 24px
+	line-height 24px
+	color $mediumgrey
+	border 2px solid $border
+	display inline-block
+	border-radius 5px
+	padding 8px
+	
+.score-wrapper
+	margin 30px 0
+		
+.team-icon
+	width 40px
+	height 40px
+	text-align center
+	border-radius 4px
+	color #fff
+	font-weight bold
+	font-size 25px
+	line-height 40px
+	
+.team-icon--big
+	width 100px
+	height 100px
+	font-size 66px
+	line-height 100px
+	display inline-block
+	vertical-align top
+	border-radius 8px
+	
+.team-green
+	background-color $green
+	
+.team-blue
+	background-color $blue
+	
+.team-red
+	background-color $red
+	
+.team-yellow
+	background-color $yellow	
+	
+.game-score
+	display inline-block
+	font-size 100px
+	line-height 100px
+	color $grey
+	font-weight bold
+	margin 0 64px
+	
+.game-time-remaining
+	font-size 80px
+	line-height 80px
+	font-weight bold
+	color $lightgrey
+	
+.game-next-score
+	font-size 20px
+	color $grey
+	font-weight bold
+	
+.game-next-opponents
+	margin 30px 0
+	
+.game-next-opponents
+	.team-icon
+		display inline-block
+	.versus
+		display inline-block
+		font-size 30px
+		font-weight bold
+		color $grey
+		margin 0 30px
+		
+.game-next-dots
+	width 10px
+	height 10px
+	border-radius 50%
+	background-color $lightgrey
+	display inline-block
+	
+.dot-active
+	background-color $grey
+	
+.table-teams
+	background-color #fff
+	text-align center
+	border-bottom 1px solid $border
+	min-height 100px
+	
+.button-table, .button-teams
+	background-color transparent
+	border none
+	font-size 24px
+	line-height 24px
+	color $grey
+	text-transform uppercase
+	letter-spacing 2px
+	font-weight bold
+	margin-top 37px
+	margin-bottom 37px
+	margin-right 2em
+	margin-left 2em	
+	
+.button-active, .button-table:hover, .button-teams:hover
+	color $green
+	
+.table-content
+	padding-top 20px
+	padding-bottom 20px
+	
+.table-body
+	display table
+	margin auto
+	
+.table-header
+	display table-header-group
+	font-size 20px
+	color $mediumgrey
+	
+.table-row
+	display table-row
+	
+.table-cell
+	display table-cell
+	padding 10px 15px
+	
+.table-row .table-cell:nth-child(1)
+		font-size 20px
+		color $mediumgrey		
+	
+.table-row .table-cell:nth-child(n+3)
+		color $grey
+		font-size 24px		
+	
+.table-row .table-cell:last-of-type
+		color $green
+		font-size 26px
+		font-weight bold
+		
+.activity-wrapper
+	overflow-y auto
+	height 300px
+		
+.activity-item
+	background-color #fff
+	border-bottom 1px solid $border
+	text-align center
+	position relative
+	padding 30px 0
+	
+.activity-item
+	.game-number
+		position absolute
+		top 30px
+		left 30px
+	.game-next-opponents
+		margin auto
+	.activity-score
+		display inline-block
+		font-size 36px
+		line-height 36px
+		vertical-align top
+		font-weight bold
+		color $grey
+		margin 0 20px
+	.activity-status
+		position absolute
+		top 30px
+		right 30px
+		font-size 22px
+		color $lightgrey
+		letter-spacing 2px
+	.status-live
+		color $red
+		font-size 26px
+		text-transform uppercase
+	
+	

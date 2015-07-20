@@ -1,0 +1,69 @@
+/*==========  Desktop First Method  ==========*/
+/* Large Devices, Wide Screens */
+
+@media only screen and (max-width: 1200px) {
+    .theader-menu__list--mobile {
+        display: none;
+    }
+}
+/* Medium Devices, Desktops */
+
+@media only screen and (max-width: 992px) {
+    .theader-menu__list--mobile {
+        display: none;
+    }
+}
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 768px) {
+    .theader-content__text h1 {
+        font-size: 75px;
+    }
+    .features-order__popup {
+        padding: 10px;
+    }
+    .features-order__button span {
+        display: none;
+    }
+    .features-order h2 {
+        font-size: 20px;
+    }
+    .theader-menu__list--mobile {
+        display: none;
+    }
+}
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 480px) {
+    .theader-content__text h1 {
+        font-size: 50px;
+    }
+    .hotel-search-result__ratings--number {
+        width: 80px;
+    }
+    .theader-menu__list {
+        display: none;
+    }
+    .theader-menu__list--mobile {
+        display: block;
+    }
+}
+/* Custom, iPhone Retina */
+
+@media only screen and (max-width: 320px) {}
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) {}
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 480px) {}
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {}
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {}
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {}

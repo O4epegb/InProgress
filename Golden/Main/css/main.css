@@ -1,0 +1,485 @@
+*::-webkit-input-placeholder {
+    color: #BBB;
+    opacity: 1;
+    text-transform: uppercase;
+}
+
+*:-moz-placeholder {
+    color: #BBB;
+    opacity: 1;
+    text-transform: uppercase;
+}
+
+*::-moz-placeholder {
+    color: #6BBB66;
+    opacity: 1;
+    text-transform: uppercase;
+}
+
+*:-ms-input-placeholder {
+    color: #BBB;
+    opacity: 1;
+    text-transform: uppercase;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+    border: 2px #d14747 solid;
+}
+
+body input:required:valid,
+body textarea:required:valid {
+    border: 2px #47d15c solid;
+}
+
+body {
+    font-family: "MontserratRegular", sans-serif;
+    font-size: 14px;
+}
+
+.top-bg {
+    background-image: url(../images/top-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    width: 100%;
+    min-height: 700px;
+    text-align: center;
+}
+
+.top-header {}
+
+.logo {
+    font-family: "WisdomScript";
+    color: #fed136;
+    font-size: 26px;
+    float: left;
+    font-weight: normal;
+}
+
+.menu {
+    float: right;
+    font-size: 0;
+    margin-top: 35px;
+}
+
+.menu ul {
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 50px;
+}
+
+.menu li:last-of-type {
+    margin-right: 0;
+}
+
+.menu a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.menu a:hover {
+    color: #fed136;
+}
+
+.menu a:active {
+    color: #2eb4c6;
+}
+
+.top-bg h3 {
+    color: #fff;
+    font-family: "DroidSerifItalic";
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 180px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+.top-bg h2 {
+    color: #fff;
+    font-family: "MontserratBold";
+    font-size: 75px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.more {
+    color: #fff;
+    font-family: "MontserratBold";
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+    background-color: #fed136;
+    padding: 25px 50px;
+    border-radius: 4px;
+    border: none;
+}
+
+.more:hover {
+    background-color: #e2b620;
+}
+
+.more:active {
+    background-color: #ffc600;
+}
+
+.services {
+    text-align: center;
+    min-height: 570px;
+    padding-bottom: 50px;
+}
+
+main h3 {
+    font-family: "MontserratBold";
+    font-size: 40px;
+    margin-top: 110px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+main h4 {
+    font-family: "MontserratBold";
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+main p {
+    font-family: "DroidSerifItalic";
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 74px;
+    line-height: 24px
+}
+
+.services-item {
+    margin-bottom: 50px;
+}
+
+.services-icon__border {
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    border: 3px solid #fed136;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.services-icon {
+    background-image: url(../images/sprites.png);
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.services-icon__commerce {
+    background-position: 0 -108px;
+    width: 40px;
+    height: 39px;
+}
+
+.services-icon__security {
+    background-position: -212px -109px;
+    width: 29px;
+    height: 38px;
+}
+
+.services-icon__responsive {
+    background-position: -98px -109px;
+    width: 41px;
+    height: 35px;
+}
+
+.services-item p {
+    font-family: "DroidSerif";
+    font-size: 14px;
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.services-item a {
+    color: #222;
+    font-family: "MontserratBold";
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.services-item a:hover {
+    color: #fed136;
+}
+
+
+.portfolio {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding-bottom: 50px;
+}
+
+.portfolio figure {
+    padding-bottom: 50px;
+    display: table;
+    margin: auto;
+}
+
+.portfolio figcaption {
+    background-color: #fff;
+    margin: auto;
+    margin-top: 0;
+    display: table-row;
+    max-width: 290px
+}
+
+.portfolio figcaption h4 {
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.portfolio figcaption p {
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.portfolio img {
+    max-width: 100%;
+    display: table-row;
+    /* height: auto; */
+}
+
+.portfolio-item:hover img {
+    outline: 2px solid #fed136;
+}
+
+.about h3,
+.about p {
+    text-align: center;
+}
+
+h4 .date {
+    text-transform: uppercase;
+}
+
+.about-text h4,
+.about-text p {
+    text-align: right;
+    margin: 0;
+    float: right;
+}
+
+.about-text__left h4,
+.about-text__left p {
+    text-align: left;
+    float: left;
+}
+
+.about-text {
+    margin-bottom: 100px;
+}
+
+.about-text p {
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: "DroidSerif";
+    max-width: 300px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-bottom: 70px;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image__text {
+    position: absolute;
+    display: block;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.team {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding-bottom: 50px;
+}
+
+.team-item {
+    margin-bottom: 40px;
+}
+
+.team-item__photo {
+    border-radius: 50%;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.team-item h4 {
+    margin-bottom: 10px;
+}
+
+.team-item p {
+    margin: 0;
+    font-family: "DroidSerif";
+    font-size: 14px;
+}
+
+.team-social-icons {
+    margin-top: 10px;
+}
+
+.team-social-icons a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 3px #222 solid;
+    border-radius: 50%;
+    color: #222;
+    display: inline-block;
+    font-size: 20px;
+    padding-top: 2px;
+}
+
+.team-social-icons a:hover {
+    color: #fff;
+}
+
+.team-social-icons .twitter-icon:hover {
+    background-color: #00ACED;
+    border-color: #00ACED;
+}
+
+.team-social-icons .facebook-icon:hover {
+    background-color: #3B5998;
+    border-color: #3B5998;
+}
+
+.team-social-icons .pinterest-icon:hover {
+    background-color: #CB2028;
+    border-color: #CB2028;
+}
+
+.team-social-icons .google-icon:hover {
+    background-color: #D95232;
+    border-color: #D95232;
+}
+
+.team-info {
+    max-width: 600px;
+    margin: auto;
+    font-family: "DroidSerif";
+}
+
+.partners {
+    text-align: center;
+    background-color: #fff;
+    padding-bottom: 50px;
+}
+
+.partners img {
+    margin-top: 50px;
+    padding-right: 50px;
+}
+
+.partners a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.contact {
+    text-align: center;
+    background-color: #222;
+    padding-bottom: 115px;
+    background-image: url(../images/Map-Image.png);
+    background-repeat: no-repeat;
+    background-position: right 200%;
+}
+
+.contact h3 {
+    color: #fff
+}
+
+form .inputs {
+    float: left;
+    width: 48%;
+}
+
+textarea {
+    float: right;
+    width: 48%;
+    height: 220px;
+    resize: none;
+}
+
+.inputs input {
+    display: block;
+    width: 100%;
+}
+
+.inputs input,
+textarea {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: none;
+    border: 2px #bbb solid;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    color: #222;
+}
+
+input[type="submit"] {
+    background-color: #fed136;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "MontserratBold";
+    font-size: 18px;
+    font-weight: normal;
+    padding: 25px 45px;
+    border-radius: 4px;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    background-color: #e2b620;
+}
+
+input[type="submit"]:active {
+    background-color: #ffc600;
+}
+
+.bottom-footer p {
+    font-size: 14px;
+    font-family: "MontserratRegular";
+    color: #555;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.bottom-footer .team-social-icons {
+    text-align: center;
+    margin: 15px auto 30px auto;
+}
+
+.bottom-footer .team-social-icons a {
+    background-color: #222;
+    color: #fff;
+}

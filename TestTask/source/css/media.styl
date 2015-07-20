@@ -1,0 +1,106 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) 
+	.team-icon--big
+		width 80px
+		height 80px
+		font-size 56px
+		line-height 80px
+	.game-score
+		font-size 80px
+		line-height 80px
+		margin 0 54px
+	.activity-item
+		.game-number
+			left 15px
+			font-size 18px	
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) 
+	.team-icon--big
+		width 100px
+		height 100px
+		font-size 66px
+		line-height 100px
+	.game-score
+		line-height 100px
+		font-weight bold
+		margin 0 64px
+	.activity-item
+		.game-number
+			left 30px	
+			font-size 24px
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.team-icon--big
+		width 80px
+		height 80px
+		font-size 56px
+		line-height 80px
+	.game-score
+		font-size 80px
+		line-height 80px
+		margin 0 44px
+	.activity-item
+		.game-number
+			left 15px
+			font-size 18px	
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.game-name
+		h1
+			font-size 24px
+		.game-name__help
+			position static
+			display inline-block
+			
+	.team-icon--big
+		width 60px
+		height 60px
+		font-size 46px
+		line-height 60px
+		
+	.game-score
+		font-size 60px
+		line-height 60px
+		margin 0 34px	
+		
+	.game-time-remaining
+		font-size 50px
+		line-height 50px
+		
+	.table-cell
+		padding 5px 8px	
+		
+	.activity-item
+		.game-number
+			position static
+			display inline-block
+		.game-next-opponents
+			margin 20px auto
+		.activity-status
+			position static
+			display block
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 365px) 
+	.game-name
+		img
+			display none
+		h1
+			line-height 60px
+		.game-name__help
+			display inline-block
+			margin-bottom 20px
+			
+	.team-icon--big
+		display block
+		margin auto
+	.game-score
+		display block
+		margin auto
+	.table-cell
+		padding 2px 4px		
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 285px)
+	.avatar
+		display none

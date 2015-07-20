@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sedona hotels</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
+    <link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-shadow">
+                    <header class="theader">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <nav class="theader-menu">
+                                        <ul class="theader-menu__list hotels">
+                                            <li><a  href="index.html">Информация</a>
+                                            </li>
+                                            <li><a href="#index.html">Фото и видео</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html"><img src="images/logo.png" alt="City Of Sedona">
+                                                </a>
+                                            </li>
+                                            <li><a href="#index.html">Карта штата</a>
+                                            </li>
+                                            <li><a class="active" href="#hotels.html">Гостиницы</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="theader-menu__list--mobile hidden-lg">
+                                                <li>
+                                                    <button class="theader-menu__list--mobile-button">
+                                                        <i class="fa fa-bars"></i>
+                                                    </button>
+                                                    <ul class="theader-menu__list--dropdown">
+                                                        <li><a href="index.html">Информация</a>
+                                                        </li>
+                                                        <li><a href="#index.html">Фото и видео</a>
+                                                        </li>
+                                                        <li><a href="#index.html">Карта штата</a>
+                                                        </li>
+                                                        <li><a class="active" href="#hotels.html">Гостиницы</a>
+                                                        </li>
+                                                    </ul>
+
+                                                </li>
+                                                <li style="">
+                                                    <a href="index.html"><img src="images/logo.png" alt="City Of Sedona">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <main class="hotels-main">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="hotels-search-params">
+                                        <div class="container ">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <section class="hotels-search-params__infrastructure">
+                                                        <h4>Инфраструктура:</h4>
+                                                        <input class="hotels-search-params__checkbox" type="checkbox" name="Pool" id="hotels-search-params__pool">
+                                                        <label class="hotels-search-params__label" for="hotels-search-params__pool">Бассейн</label>
+                                                        <input class="hotels-search-params__checkbox" type="checkbox" name="Parking" id="hotels-search-params__parking">
+                                                        <label class="hotels-search-params__label" for="hotels-search-params__parking">Парковка</label>
+                                                        <input class="hotels-search-params__checkbox" type="checkbox" name="Wi-fi" id="hotels-search-params__wi-fi">
+                                                        <label class="hotels-search-params__label" for="hotels-search-params__wi-fi">Wi-fi</label>
+
+
+                                                    </section>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <section class="hotels-search-params__housing">
+                                                        <h4>Тип жилья:</h4>
+                                                        <input class="hotels-search-params__checkbox" type="checkbox" name="Inn" id="hotels-search-params__inn">
+                                                        <label class="hotels-search-params__label" for="hotels-search-params__inn">Гостиница</label>
+                                                        <input class="hotels-search-params__checkbox" type="checkbox" name="Motel" id="hotels-search-params__motel">
+                                                        <label class="hotels-search-params__label" for="hotels-search-params__motel">Мотель</label>
+                                                        <input class="hotels-search-params__checkbox" type="checkbox" name="Aparts" id="hotels-search-params__aparts">
+                                                        <label class="hotels-search-params__label" for="hotels-search-params__aparts">Апартаменты</label>
+                                                    </section>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <section class="hotels-search-params__price">
+                                                        <h4>Стоимость в сутки (р):</h4>
+                                                        <div class="hotels-search-params__price--filter">
+                                                            <article class="hotels-search-params__price-min">
+                                                                <label class="hotels-search-params__price-label" for="hotels-search-params__price-min">От</label>
+                                                                <input class="hotels-search-params__price-field" type="text" name="Price-min" id="hotels-search-params__price-min" value="0">
+                                                            </article>
+                                                            <article class="hotels-search-params__price-max">
+                                                                <label class="hotels-search-params__price-label" for="hotels-search-params__price-max">До</label>
+                                                                <input class="hotels-search-params__price-field" type="text" name="Price-max" id="hotels-search-params__price-max" value="3000">
+                                                            </article>
+                                                        </div>
+                                                        <div class="hotels-search-params__price--range">
+
+                                                            <div class="hotels-search-params__price--range__toggle hotels-search-params__price--range__toggle--min">
+                                                            </div>
+                                                            <div class="hotels-search-params__price--range__toggle hotels-search-params__price--range__toggle--max">
+
+                                                            </div>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <section class="hotels-search-sorting">
+                                        <div class="hotels-search__found">
+                                            <h2>Найдено: <span id="hotels-search__total-number-found">3</span></h2>
+                                        </div>
+                                        <div class="hotels-search__sorting-options">
+                                            <p>Сортировка:</p>
+                                            <a class="active" href="#">По цене</a>
+                                            <a href="#">По типу</a>
+                                            <a href="#">По рейтингу</a>
+                                        </div>
+                                        <div class="hotels-search__sorting-arrow">
+                                            <a class="hotels-search__sorting-arrow--up active" href="#hotels.html"></a>
+                                            <a class="hotels-search__sorting-arrow--down" href="#hotels.html"></a>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <section class="hotel-search-result">
+
+                                        <div class="hotel-search-result__photo">
+                                            <a href="#hotels.html"><img src="images/hotel-amara-resort.jpg" alt="Гостиница Amara resort & spa">
+                                            </a>
+                                        </div>
+                                        <div class="hotel-search-result__description">
+                                            <a class="hotel-search-result__description--name" href="#hotels.html">Amara resort & spa</a>
+                                            <p class="hotel-search-result__description--type">Гостиница</p>
+                                            <p class="hotel-search-result__description--price">От <span>3500</span> р.</p>
+                                            <div class="hotel-search-result__description--buttons">
+                                                <a class="hotel-search-result__description--more" href="#hotels.html">Подробнее</a>
+                                                <a class="hotel-search-result__description--book" href="#hotels.html">Забронировать</a>
+                                            </div>
+                                        </div>
+                                        <div class="hotel-search-result__ratings">
+                                            <div class="hotel-search-result__ratings--stars">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <div class="hotel-search-result__ratings--number">
+                                                <p>Рейтинг: <span>8.5</span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </section>
+                                    <section class="hotel-search-result">
+
+                                        <div class="hotel-search-result__photo">
+                                            <a href="#hotels.html"><img src="images/hotel-desert.jpg" alt="Мотель Desert Quail Inn">
+                                            </a>
+                                        </div>
+                                        <div class="hotel-search-result__description">
+                                            <a class="hotel-search-result__description--name" href="#hotels.html">Desert Quail Inn</a>
+                                            <p class="hotel-search-result__description--type">Мотель</p>
+                                            <p class="hotel-search-result__description--price">От <span>2000</span> р.</p>
+                                            <div class="hotel-search-result__description--buttons">
+                                                <a class="hotel-search-result__description--more" href="#hotels.html">Подробнее</a>
+                                                <a class="hotel-search-result__description--book" href="#hotels.html">Забронировать</a>
+                                            </div>
+                                        </div>
+                                        <div class="hotel-search-result__ratings">
+                                            <div class="hotel-search-result__ratings--stars">
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <div class="hotel-search-result__ratings--number">
+                                                <p>Рейтинг: <span>8.9</span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </section>
+                                    <section class="hotel-search-result">
+
+                                        <div class="hotel-search-result__photo">
+                                            <a href="#hotels.html"><img src="images/hotel-villas.jpg" alt="Апартаменты Villas at Poco Diablo">
+                                            </a>
+                                        </div>
+                                        <div class="hotel-search-result__description">
+                                            <a class="hotel-search-result__description--name" href="#hotels.html">Villas at Poco Diablo</a>
+                                            <p class="hotel-search-result__description--type">Апартаменты</p>
+                                            <p class="hotel-search-result__description--price">От <span>4000</span> р.</p>
+                                            <div class="hotel-search-result__description--buttons">
+                                                <a class="hotel-search-result__description--more" href="#hotels.html">Подробнее</a>
+                                                <a class="hotel-search-result__description--book" href="#hotels.html">Забронировать</a>
+                                            </div>
+                                        </div>
+                                        <div class="hotel-search-result__ratings">
+                                            <div class="hotel-search-result__ratings--stars">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <div class="hotel-search-result__ratings--number">
+                                                <p>Рейтинг: <span>9.2</span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <footer class="main-footer">
+                        <div class="container">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <article class="main-footer-section">
+                                                    <a class="main-footer-section__hashtag" href="#index.html">#VisitSedona</a>
+                                                </article>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <article class="main-footer-section">
+                                                    <a href="#index.html">
+                                                        <div class="main-footer-social main-footer-social__twitter"></div>
+                                                    </a>
+                                                    <a href="#index.html">
+                                                        <div class="main-footer-social main-footer-social__facebook"></div>
+                                                    </a>
+                                                    <a href="#index.html">
+                                                        <div class="main-footer-social main-footer-social__youtube"></div>
+                                                    </a>
+                                                </article>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <article class="main-footer-section">
+                                                    <p>Website by <a href="#index.html"><span class="main-footer-logos main-footer-logos__by"></span></a> for <a href="#index.html"><span class="main-footer-logos main-footer-logos__for"></span></a>
+                                                    </p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+    <script src="libs/jquery/jquery-1.11.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/backbtn.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+
+</html>
