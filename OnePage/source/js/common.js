@@ -62,6 +62,7 @@ $(document).ready(function () {
 			}
 			activeMenuLink();
 			activeNavDot();
+			$(".work-items-big").fadeOut();
 		} else if ((e.deltaY > 0 || e.keyCode == 38 || e.keyCode == 33) && e.ctrlKey == false) {
 			var currentPage = $('.active-page');
 			var nextPage = currentPage.prev();
@@ -71,11 +72,46 @@ $(document).ready(function () {
 			}
 			activeMenuLink();
 			activeNavDot();
+			$(".work-items-big").fadeOut();
 		} else if (e.which == 2) {
 			e.preventDefault();
 		}
 	});
-
+	
+	//Показ большой превью из work, парсинг адреса картинки и текста
+	$(".work-item").click(function() {
+		var itemIndex = $(this).index();
+		var imgSrc = $(this).find("img").attr("src");
+		var text = $(this).find("p").text();
+		$(".work-item-preview").find("img").attr("src", imgSrc);
+		$(".work-item-preview").find("p").text(text);
+		$(".work-items-big").fadeIn();
+	})
+	
+	//Закрытие превью по клику вне превью
+	$(".work-items-big").on('click', function (e) {
+		if ($(e.target).is($('.work-item-preview').find("*")) || $(e.target).is($('.work-item-preview'))) {
+		} else {
+			$(".work-items-big").fadeOut();
+		}
+	});
+	
+	//Фильтр work
+	$(".work-filter").children().click(function(){
+		var whichClass = $(this).text().toLowerCase();
+		if (whichClass == "all") {
+			$(".work-item").each(function(){
+				$(this).removeClass("preview-hidden");
+			});
+			$(".work-filter").children().addClass("filter-bg");
+		} else {
+		$(".work-item").not("."+whichClass).addClass("preview-hidden");
+		$("."+whichClass).removeClass("preview-hidden");
+		$(".filter-bg").removeClass("filter-bg");
+		$(this).addClass("filter-bg");
+		}
+	});
+	
 	//Случайные цвета
 	var rndNumber = function () {
 		return Math.floor((Math.random() * colorsArr.length))
