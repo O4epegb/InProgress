@@ -3,43 +3,87 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {}
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {}
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
-	section
+@media only screen and (max-width : 992px)
+	.page1
 		h2
 			font-size 3em
-			margin-top 2em
+			max-width 700px
 		p
 			font-size 1em
+			max-width 700px
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
 	.dots-list
-		top 90%
-		left 50%
-		transform translateX(-50%)
+		bottom 5%
+		left auto
 		padding 0
-		display block
-		width 100%
+		margin 0
+		display inline-block
 		text-align center
+		width 100%
+		transform none
+	.dots
+		display inline-block
+	.active-dot
+		margin-bottom 5px
+	.device
+		margin-top 50px	
+	.page-content
+		padding-top 0
+		.services-item
+			margin-bottom 10px
+			h3
+				font-size 1.2em
+			p
+				font-size 1em
+	.work-filter
 		li
-			display inline-block
+			font-size 1.2em
+			padding 0.5em 1.5em
+			margin-bottom 10px
+	.page5		
+		.contacts-text
+			font-size 1em
+			margin-bottom 20px	
+	.contacts-item
+		margin-bottom 15px
+		h3
+			line-height 1.2em
+			font-size 1.2em
+	.work-item
+		width 50%
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+	.dots-list
+		top 0
+		bottom auto
+		padding 0
+	.page1
+		h2
+			font-size 2em
+			margin-top 0
+			
 	.apply-btn
 		margin 0 auto
 		margin-top 30px
 		padding 1em 2.4em
+	.page2
+		.page-header
+			h2
+				margin-right 70px
+		.page-content
+			p
+				font-size 1em
+			blockquote
+				font-size 1.2em
+	section
+		.page-header
+			h2
+				font-size 2em
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 365px)
-	section
-		h2
-			font-size 2em
-			margin-top 1em
+	.page1
 		h1
 			font-size 1.5em
-	.dots-list
-		li
-			width 16px
-			height 16px
-			margin 10px		
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 285px) {}

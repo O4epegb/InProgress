@@ -119,11 +119,11 @@ $(document).ready(function () {
 	var colorsArr = ["bg-blue", "bg-yellow", "bg-pink", "bg-green", "bg-white"];
 	var color;
 
-	$(".apply-btn").mouseenter(function () {
+	$(".apply-btn, .submit-btn").mouseenter(function () {
 		color = rndNumber();
 		$(this).addClass(colorsArr[color]);
 	});
-	$(".apply-btn").mouseleave(function () {
+	$(".apply-btn,  .submit-btn").mouseleave(function () {
 		$(this).removeClass(colorsArr[color]);
 	});
 });
