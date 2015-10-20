@@ -1,0 +1,324 @@
+$gold = #c69a69
+$bg-black = #1f1d1e
+$text-black = #42454a
+$grey = #dbdbea
+$dark-grey = #b9b9c8
+$text-white = #F4F6F7
+$white = #fff
+
+* 
+  box-sizing border-box
+
+body 
+  font-family Panton
+
+.wrapper 
+  max-width 1024px
+  margin 0 auto
+  padding-bottom 50px
+  &_objects
+    min-width 700px
+
+.intro 
+  background-color $bg-black
+  padding-top 150px
+  text-align center
+  height 100vh
+  color $text-white
+  font-size 18px
+  &__title 
+    font-size 200px
+    margin-top 0
+    margin-bottom 30px
+  &__company-name 
+    color $gold
+    display block
+    text-transform uppercase
+  &__text 
+    max-width 550px
+    margin auto
+  &__link 
+    color $gold
+    display inline-block
+    margin-top 30px
+    text-decoration none
+    padding-bottom 3px
+    border-bottom 1px solid
+
+.objects
+  background-color $white
+  color $text-black
+  &__title
+    font-size 60px
+    padding-left 60px
+    font-weight normal
+  &__table 
+    width 100%
+  &__table-head 
+    color $gold
+    font-weight 700
+    border-bottom 3px solid $text-black
+  &__table-header 
+    position relative
+  &__table-row_body 
+    cursor pointer
+    border-bottom 1px solid $gold
+  &__table-cell 
+    padding 20px 10px
+    vertical-align top
+    &_right-align
+      text-align right
+    &_left-align
+      text-align left
+    &:first-of-type
+      padding-left 60px
+    &:last-of-type
+      padding-right 60px
+      
+@media only screen and (max-width: 960px)
+  .objects 
+    &__table-cell 
+      &:first-of-type
+        padding-left 30px
+      &:last-of-type
+        padding-right 30px
+        
+@media only screen and (max-width: 900px)
+  .objects 
+    &__table-cell 
+      &:first-of-type
+        padding-left 15px
+      &:last-of-type
+        padding-right 15px
+
+@media only screen and (max-width: 870px)
+  .objects 
+    &__table-cell 
+      padding 20px 5px
+      &:first-of-type
+        padding-left 10px
+      &:last-of-type
+        padding-right 10px
+
+@media only screen and (max-width: 790px)
+  .objects 
+    &__table
+      font-size 14px
+
+.object-info 
+  &__header 
+    padding 30px 40px
+  &__arrow 
+    width 40px
+    height 2px
+    background-color $gold
+    position relative
+    display inline-block
+    cursor pointer
+    border none
+    box-sizing content-box
+    padding 0
+    outline none
+    -webkit-appearance none
+    &:before,
+    &:after 
+      content ''
+      position absolute
+      width 20px
+      height 2px
+      background-color $gold
+      transform rotate(-45deg)
+      top -7px
+      left -3px
+    &:after 
+      transform rotate(45deg)
+      top 7px
+      left -3px
+    &_reverse 
+      transform rotate(180deg)
+    &_disabled
+      background-color $grey
+      cursor not-allowed
+      &:before,
+      &:after
+        background-color $grey
+  &__menu
+    width 36px
+    margin-top 6px
+    background-color transparent
+    float right
+    cursor pointer
+    border none
+    padding 0
+    outline none
+    -webkit-appearance none
+    &:before,
+    &:after
+      content ""
+      display block
+      height 6px
+      width 100%
+      border-top 1px solid $gold
+      border-bottom 1px solid $gold
+      margin-bottom 6px
+    &:after
+      margin-bottom 0
+  &__button-wrapper
+    display inline-block
+    padding-top 2px
+    height 30px
+    margin-right 20px
+    cursor pointer
+    &_disabled
+      cursor not-allowed
+  &__name
+    font-size 30px
+    text-transform uppercase
+    color $text-black
+  &__address
+    font-size 30px
+    color $gold
+  &__container
+    width 100%
+    padding 20px 40px 40px
+    font-size 0
+  &__column
+    width 50%
+    display inline-block
+    vertical-align top
+    font-size 16px
+  &__data-list
+    list-style-type none
+    margin 0
+  &__data-item
+    color $gold
+    border-bottom 1px solid $grey
+    padding 5px 0
+    font-weight 600
+    &:last-of-type
+      border-bottom none
+  &__data-cell
+    font-weight 400
+  &__image
+    display block
+    width 100%
+    height auto
+  &__description
+    color $gold
+    text-align justify
+  &__lead
+    font-weight 600
+
+    
+/* STYLES FOR TABLE SORT PLUGIN */
+
+th.tablesort-sortable 
+  -webkit-user-select none
+  -khtml-user-select none
+  -moz-user-select none
+  -o-user-select none
+  user-select none
+  cursor pointer
+
+table .tablesort-sortable .objects__table-header:after
+  content ""
+  position absolute
+  top -15px
+  left 0
+  visibility hidden
+  border-left 7px solid transparent
+  border-right 7px solid transparent
+  border-top none
+  border-bottom 7px solid $gold
+
+table .tablesort-desc .objects__table-header:after
+  border-top 7px solid $gold
+  border-bottom none
+
+// table .tablesort-asc,table .tablesort-desc
+//   background-color rgba(141, 192, 219, 0.25)
+// 
+
+table .tablesort-sortablehover .objects__table-header:after,
+table .tablesort-asc .objects__table-header:after,
+table .tablesort-desc .objects__table-header:after 
+  visibility visible
+
+/*
+ * Styling for the table row shown in empty tables
+ */
+
+/* The row is always added as the first row in a table
+   Hide it by default */
+.showIfLast 
+  display none
+
+/* Only show it if it is also the last row of the table. */
+.showIfLastlast-child 
+  display table-row
+
+.showIfLast td 
+  text-align center
+
+.showIfLast td:after 
+  content "Нет данных"
+
+/* NG_ANIMATE STYLES FOR NG-VIEW */ 
+
+.fade
+  opacity 1
+  -webkit-transition all .3s ease
+  transition all .3s ease
+  position absolute
+  top 0
+  left 0
+  right 0
+  height 100%
+.fade.ng-enter,
+.fade.ng-leave
+  -webkit-transition all .3s ease
+  transition all .3s ease
+
+.fade.ng-enter
+  opacity 0
+
+.fade.ng-enter-active
+  opacity 1
+
+.fade.ng-leave
+  opacity 1
+
+.fade.ng-leave-active
+  opacity 0
+
+/* OWL_CAROUSEL STYLES */
+
+.grabbing
+  cursor move
+
+.owl-carousel
+    padding 0 40px
+  
+@media only screen and (max-width: 1024px)
+  .owl-carousel
+    padding 0
+    
+.owl-theme .owl-controls .owl-page span
+  background-color $dark-grey
+
+/* BROWSER SLIDER MODIFICATION */
+  
+body::-webkit-scrollbar-thumb
+  background-color $grey
+  -webkit-border-radius 1ex
+
+body::-webkit-scrollbar
+  height 5px
+  width 7px
+  background-color transparent
+
+body::-webkit-scrollbar-corner
+  background-color transparent
+  
+body::-webkit-scrollbar-thumb:hover
+  background-color $dark-grey

@@ -1,0 +1,31 @@
+<div class="wrapper wrapper_objects">
+    <div class="objects">
+        <h2 class="objects__title">Объекты</h2>
+        <table class="objects__table" ts-wrapper>
+            <thead class="objects__table-head">
+                <tr class="objects__table-row objects__table-row_head">
+                    <th class="objects__table-cell objects__table-cell_left-align" ts-criteria="group|lowercase"><span class="objects__table-header">Группа</span></th>
+                    <th class="objects__table-cell objects__table-cell_left-align" ts-criteria="name|lowercase"><span class="objects__table-header">Объект</th>
+                    <th class="objects__table-cell objects__table-cell_left-align" ts-criteria="address|lowercase"><span class="objects__table-header">Адрес</th>
+                    <th class="objects__table-cell objects__table-cell_right-align" ts-default ts-criteria="area|parseFloat"><span class="objects__table-header">Площадь <br> (кв. м.)</th>
+                    <th class="objects__table-cell objects__table-cell_right-align" ts-criteria="investment|parseFloat"><span class="objects__table-header">Первоначальные вложения</th>
+                    <th class="objects__table-cell objects__table-cell_right-align" ts-criteria="profitability|parseFloat"><span class="objects__table-header">Доходность</th>
+                    <th class="objects__table-cell objects__table-cell_left-align" ts-criteria="ips|lowercase"><span class="objects__table-header">ИПС</th>
+                    <th class="objects__table-cell objects__table-cell_left-align" ts-criteria="type|lowercase"><span class="objects__table-header">Тип недвижимости</th>
+                </tr>
+            </thead>
+            <tbody class="objects__table-body">
+                <tr class="objects__table-row objects__table-row_body" ng-repeat="object in main.data" ts-repeat ng-click="main.goTo('/objects/' + object.id)">
+                    <td class="objects__table-cell objects__table-cell_left-align">{{object.group}}</td>
+                    <td class="objects__table-cell objects__table-cell_left-align">{{object.name}}</td>
+                    <td class="objects__table-cell objects__table-cell_left-align">{{object.address}}</td>
+                    <td class="objects__table-cell objects__table-cell_right-align">{{object.area}}</td>
+                    <td class="objects__table-cell objects__table-cell_right-align">{{object.investment}}</td>
+                    <td class="objects__table-cell objects__table-cell_right-align">{{object.profitability}}</td>
+                    <td class="objects__table-cell objects__table-cell_left-align">{{object.ips}}</td>
+                    <td class="objects__table-cell objects__table-cell_left-align">{{object.type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

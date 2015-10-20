@@ -1,0 +1,86 @@
+<div class="wrapper">
+    <div class="object-info">
+        <header class="object-info__header">
+            <div class="object-info__button-wrapper" ng-click="ObjectCtrl.goPrev()" ng-class="{'object-info__button-wrapper_disabled': ObjectCtrl.isLeftArrowDisabled()}">
+              <button
+                class="object-info__arrow"
+                title="Перейти к следующему объекту"
+                ng-class="{'object-info__arrow_disabled': ObjectCtrl.isLeftArrowDisabled()}"></button>
+            </div>
+            <div class="object-info__button-wrapper" ng-click="ObjectCtrl.goNext()" ng-class="{'object-info__button-wrapper_disabled': ObjectCtrl.isRightArrowDisabled()}">
+              <button
+                class="object-info__arrow object-info__arrow_reverse"
+                title="Перейти к прошлому объекту"
+                ng-class="{'object-info__arrow_disabled': ObjectCtrl.isRightArrowDisabled()}"></button>
+            </div>
+            <button class="object-info__menu" ng-click="ObjectCtrl.goTo('/objects')" title="Вернуться к таблице"></button>
+        </header>
+        <div class="object-info__container">
+            <div class="object-info__column">
+                <div class="object-info__name">{{ObjectCtrl.object.name}}</div>
+                <div class="object-info__address">{{ObjectCtrl.object.address}}</div>
+            </div>
+            <div class="object-info__column">
+                <ul class="object-info__data-list">
+                    <li class="object-info__data-item">Цена объекта:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.cost}}</span>
+                    </li>
+                    <li class="object-info__data-item">Тип объекта:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.type}}</span>
+                    </li>
+                    <li class="object-info__data-item">Площадь:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.area}}</span>
+                    </li>
+                    <li class="object-info__data-item">Район:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.district}}</span>
+                    </li>
+                    <li class="object-info__data-item">ИПС:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.ips}}</span>
+                    </li>
+                    <li class="object-info__data-item">Доходность:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.profitability}}</span>
+                    </li>
+                    <li class="object-info__data-item">Окупаемость:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.recoupment}}</span>
+                    </li>
+                    <li class="object-info__data-item">Рискованность:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.risk}}</span>
+                    </li>
+                    <li class="object-info__data-item">Срок до запуска:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.launch}}</span>
+                    </li>
+                    <li class="object-info__data-item">Собственник / девелопер:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.owner}}</span>
+                    </li>
+                    <li class="object-info__data-item">Контактный телефон:
+                        <span class="object-info__data-cell">{{ObjectCtrl.object.contact}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="owl-carousel owl-theme" owl-carousel>
+            <div ng-repeat="image in ObjectCtrl.object.images">
+              <img class="object-info__image" ng-src="{{image}}" alt="img">
+            </div>
+        </div> -->
+        <data-owl-carousel class="owl-carousel" data-options="{navigation: false, slideSpeed: 300, paginationSpeed: 400, singleItem: true, autoHeight : true}">
+            <div owl-carousel-item="" ng-repeat="image in ObjectCtrl.object.images" class="item">
+                <img class="object-info__image" ng-src="{{image}}" alt="img">
+            </div>
+        </data-owl-carousel>
+        <div class="object-info__container">
+            <div class="object-info__column">
+                <div class="object-info__details-block">
+                    <div class="object-info__details-item">
+                    </div>
+                </div>
+            </div>
+            <div class="object-info__column">
+                <div class="object-info__description">
+                    <!-- <span class="object-info__lead">Бизнес-центр «Аквамарин III»</span>  -->
+                    {{ObjectCtrl.object.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

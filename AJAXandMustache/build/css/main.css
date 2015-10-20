@@ -1,0 +1,1 @@
+ul li .edit{display:none}ul li.edit .edit{display:initial}ul li.edit .noedit{display:none}.remove-item{position:absolute;right:20px;top:50%;margin-top:-25px}.collection-item{position:relative}input.edit{width:auto;height:auto;margin:0}

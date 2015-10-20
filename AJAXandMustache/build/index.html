@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My projects</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1>People list</h1>
+                <ul class="orders collection">
+                    <template id="order-template">
+                        <li class='collection-item' data-id="{{id}}">
+                            <p>
+                                My name is 
+                                <span class="noedit name">{{name}}</span>
+                                <input class="edit name" type="text">
+                                 and I am 
+                                <span class="noedit age">{{age}}</span>
+                                <input class="edit age" type="text">
+                                 years old
+                            </p>
+                            <button class="remove-item btn-floating btn-large waves-effect waves-light red" data-id='{{id}}'><i class="material-icons">delete</i></button>
+                            <button class="edit-order noedit waves-effect waves-light btn"><i class="material-icons left">label_outline</i>Edit</button>
+                            <button class="save-edit edit waves-effect waves-light btn"><i class="material-icons left">done</i>Save</button>
+                            <button class="cancel-edit edit waves-effect waves-light btn"><i class="material-icons left">restore</i>Cancel</button>
+                        </li>
+                    </template>
+                </ul>
+                <h3>Add a Person</h3>
+                <p>
+                    <div class="input-field">
+                        <input id="name" type="text">
+                        <label for="name">Name</label>
+                    </div>
+                </p>
+                <p>
+                    <div class="input-field">
+                        <input id="age" type="text">
+                        <label for="age">Age</label>
+                    </div>
+                </p>
+                <button class="add-order waves-effect waves-light btn">Add order!</button>
+            </div>
+        </div>
+    </div>
+    <!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/html5shiv/respond.min.js"></script>
+	<![endif]-->
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script src="js/common.min.js"></script>
+</body>
+
+</html>
