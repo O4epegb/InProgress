@@ -10,7 +10,7 @@ $white = #fff
   box-sizing border-box
 
 body 
-  font-family Panton
+  font-family Panton, sans-serif
 
 .wrapper 
   max-width 1024px
@@ -38,12 +38,21 @@ body
     max-width 550px
     margin auto
   &__link 
+    display block
+    margin auto
+    background none
+    outline none
     color $gold
-    display inline-block
     margin-top 30px
     text-decoration none
+    padding 0
     padding-bottom 3px
+    border none
     border-bottom 1px solid
+  &__form
+    margin-top 20px
+  &__input
+    color $text-black
 
 .objects
   background-color $white

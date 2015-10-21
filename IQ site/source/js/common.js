@@ -1,25 +1,49 @@
-angular.module("app", ['ngRoute', 'tableSort', 'ngAnimate']).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: 'intro.html'
-        })
-        .when('/intro', {
-            templateUrl: 'intro.html'
-        })
-        .when('/objects', {
-            templateUrl: 'objects-table.html'
-        })
-        .when('/objects/:id', {
-            templateUrl: 'objects-info.html',
-            controller: 'ObjectCtrl',
-            controllerAs: 'ObjectCtrl'
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
+angular.module("app", ['ngRoute', 'tableSort', 'ngAnimate'])
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'intro.html'
+            })
+            .when('/intro', {
+                templateUrl: 'intro.html'
+            })
+            .when('/objects', {
+                templateUrl: 'objects-table.html'
+            })
+            .when('/objects/:id', {
+                templateUrl: 'objects-info.html',
+                controller: 'ObjectCtrl',
+                controllerAs: 'ObjectCtrl'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
 
-    $locationProvider.html5Mode(true);
-}]);
+        $locationProvider.html5Mode(true);
+    }])
+    .run(['$rootScope', '$location', function($rootScope, $location) {
+        $rootScope.$on("$routeChangeStart", function(event, next, current) {
+            if ($rootScope.loggedInUser !== 123) {
+                // no logged user, redirect to /intro
+                if (next.templateUrl === "objects.html") {
+
+                } else {
+                    $location.path("/intro");
+                }
+            }
+        });
+    }]);
+
+angular.module("app").controller("LoginCtrl", ['$scope', '$location', '$rootScope', LoginCtrl]);
+
+    function LoginCtrl($scope, $location, $rootScope) {
+        $scope.passwordIsValid = true;
+        $scope.login = function() {
+            $scope.passwordIsValid = (parseInt($scope.password) === 123) ? true : false;
+            $rootScope.loggedInUser = parseInt($scope.password);
+            $location.path("/objects");
+        };
+    }
 
 angular.module("app").controller("AppCtrl", ["$scope", "$location", "$routeParams", '$timeout', 'Model', AppCtrl]);
 
@@ -30,6 +54,27 @@ angular.module("app").directive("owlCarousel", [owlCarouselDirective]);
 angular.module("app").directive("owlCarouselItem", [owlCarouselItem]);
 
 angular.module("app").factory("Model", Model);
+
+angular.module("app").filter('numberFilter', [numberFilter]);
+
+angular.module('app')
+    .factory('authProvider', function() {
+        var user;
+        return {
+            setUser: function(aUser) {
+                user = aUser;
+            },
+            isLoggedIn: function() {
+                return (user) ? user : false;
+            }
+        };
+    });
+
+function numberFilter() {
+    return function(input) {
+        return parseInt(input.replace(/[^\d\.\-]/g, ""), 10)
+    };
+}
 
 function AppCtrl($scope, $location, $routeParams, $timeout, Model) {
     var vm = this;
@@ -746,7 +791,7 @@ function Model() {
         description: "Бизнес-центр «Аквамарин III» расположен на первой линии Озерковской набережной в историческом районе Москвы – Замоскворечье. Офисный комплекс состоит из 4-х отдельно стоящих офисных зданий класса «А» общей площадью 78 000 кв. м, объ - единенных общим двухуровневым подземным паркингом на 550 машиномест. Отличная транспортная доступность общественным и личным автотранспортом: 5 мин. пешком от станций метро Новокузнецкая и Третьяковская. На территории здания предполагается разместить многофункциональный комплекс из апарт-отеля и взаимодополняющих коммерческих объектов для работы, торговли и свободного времяпрепровождения. Предусмотрена разнообразная внутренняя инфраструктура: несколько ресторанов, два пункта питания для арендаторов, на первых этажах приемные пункты бытовых служб, отделение банка, кафе, газетные и цветочные киоски.",
     }, {
         id: "31",
-        group: "участок",
+        group: "Участок",
         name: "Апрель",
         address: "деревня Юкки",
         district: "Адмиралтейский",
@@ -767,7 +812,7 @@ function Model() {
         description: "Бизнес-центр «Аквамарин III» расположен на первой линии Озерковской набережной в историческом районе Москвы – Замоскворечье. Офисный комплекс состоит из 4-х отдельно стоящих офисных зданий класса «А» общей площадью 78 000 кв. м, объ - единенных общим двухуровневым подземным паркингом на 550 машиномест. Отличная транспортная доступность общественным и личным автотранспортом: 5 мин. пешком от станций метро Новокузнецкая и Третьяковская. На территории здания предполагается разместить многофункциональный комплекс из апарт-отеля и взаимодополняющих коммерческих объектов для работы, торговли и свободного времяпрепровождения. Предусмотрена разнообразная внутренняя инфраструктура: несколько ресторанов, два пункта питания для арендаторов, на первых этажах приемные пункты бытовых служб, отделение банка, кафе, газетные и цветочные киоски.",
     }, {
         id: "32",
-        group: "участок",
+        group: "Участок",
         name: "Бокс",
         address: "Морской пр.",
         district: "Адмиралтейский",
