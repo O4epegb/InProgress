@@ -23,9 +23,7 @@ angular.module("app", ['ngRoute', 'tableSort', 'ngAnimate'])
     }])
     .run(['$rootScope', '$location', 'authProvider', function($rootScope, $location, authProvider) {
         $rootScope.$on("$routeChangeStart", function(event, next, current) {
-            if (next.templateUrl === "intro.html") {
-                authProvider.closeLoginPopup();
-            }
+            authProvider.closeLoginPopup();
             if ($rootScope.loggedInUser !== 123) {
                 // no logged user, redirect to /intro
                 if (next.templateUrl === "objects.html") {
@@ -37,18 +35,9 @@ angular.module("app", ['ngRoute', 'tableSort', 'ngAnimate'])
         });
     }]);
 
-angular.module("app").controller("LoginCtrl", ['$scope', '$location', '$rootScope', LoginCtrl]);
-
-    function LoginCtrl($scope, $location, $rootScope) {
-        $scope.passwordIsValid = true;
-        $scope.login = function() {
-            $scope.passwordIsValid = (parseInt($scope.password) === 123) ? true : false;
-            $rootScope.loggedInUser = parseInt($scope.password);
-            $location.path("/objects");
-        };
-    }
-
 angular.module("app").controller("AppCtrl", ["$scope", "$location", "$routeParams", '$timeout', 'Model', 'authProvider', AppCtrl]);
+
+angular.module("app").controller("LoginCtrl", ['$scope', '$location', '$rootScope', 'authProvider', LoginCtrl]);
 
 angular.module("app").controller("ObjectCtrl", ["$scope", "$location", "$routeParams", '$timeout', 'Model', ObjectCtrl]);
 
@@ -90,7 +79,7 @@ function AppCtrl($scope, $location, $routeParams, $timeout, Model, authProvider)
     var vm = this;
     var sc = $scope;
 
-    $scope.isLoginPopupVisible = authProvider.isLoginPopupVisible;
+    vm.isLoginPopupVisible = authProvider.isLoginPopupVisible;
 
     vm.showLoginPopup = authProvider.showLoginPopup;
 
@@ -101,6 +90,16 @@ function AppCtrl($scope, $location, $routeParams, $timeout, Model, authProvider)
     };
 
     vm.data = Model.getModel();
+}
+
+function LoginCtrl($scope, $location, $rootScope, authProvider) {
+    $scope.passwordIsValid = true;
+    $scope.login = function() {
+        $scope.passwordIsValid = (parseInt($scope.password) === 123) ? true : false;
+        $rootScope.loggedInUser = parseInt($scope.password);
+        $location.path("/objects");
+        authProvider.closeLoginPopup();
+    };
 }
 
 function ObjectCtrl($scope, $location, $routeParams, $timeout, Model) {
