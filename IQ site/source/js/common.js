@@ -21,8 +21,11 @@ angular.module("app", ['ngRoute', 'tableSort', 'ngAnimate'])
 
         $locationProvider.html5Mode(true);
     }])
-    .run(['$rootScope', '$location', function($rootScope, $location) {
+    .run(['$rootScope', '$location', 'authProvider', function($rootScope, $location, authProvider) {
         $rootScope.$on("$routeChangeStart", function(event, next, current) {
+            if (next.templateUrl === "intro.html") {
+                authProvider.closeLoginPopup();
+            }
             if ($rootScope.loggedInUser !== 123) {
                 // no logged user, redirect to /intro
                 if (next.templateUrl === "objects.html") {
@@ -45,7 +48,7 @@ angular.module("app").controller("LoginCtrl", ['$scope', '$location', '$rootScop
         };
     }
 
-angular.module("app").controller("AppCtrl", ["$scope", "$location", "$routeParams", '$timeout', 'Model', AppCtrl]);
+angular.module("app").controller("AppCtrl", ["$scope", "$location", "$routeParams", '$timeout', 'Model', 'authProvider', AppCtrl]);
 
 angular.module("app").controller("ObjectCtrl", ["$scope", "$location", "$routeParams", '$timeout', 'Model', ObjectCtrl]);
 
@@ -66,6 +69,13 @@ angular.module('app')
             },
             isLoggedIn: function() {
                 return (user) ? user : false;
+            },
+            "isLoginPopupVisible": false,
+            showLoginPopup: function() {
+                this.isLoginPopupVisible = true;
+            },
+            closeLoginPopup: function() {
+                this.isLoginPopupVisible = false;
             }
         };
     });
@@ -76,9 +86,15 @@ function numberFilter() {
     };
 }
 
-function AppCtrl($scope, $location, $routeParams, $timeout, Model) {
+function AppCtrl($scope, $location, $routeParams, $timeout, Model, authProvider) {
     var vm = this;
     var sc = $scope;
+
+    $scope.isLoginPopupVisible = authProvider.isLoginPopupVisible;
+
+    vm.showLoginPopup = authProvider.showLoginPopup;
+
+    vm.closeLoginPopup = authProvider.closeLoginPopup;
 
     vm.goTo = function(hash) {
         $location.path(hash);
@@ -376,7 +392,7 @@ function Model() {
         address: "Невский проспект, 54",
         district: "Адмиралтейский",
         area: "433",
-        investment: "16 200 000 USD",
+        investment: "972 000 000 руб.",
         profitability: "20%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -397,7 +413,7 @@ function Model() {
         address: "Невский проспект, 63",
         district: "Адмиралтейский",
         area: "154",
-        investment: "4 500 000 USD",
+        investment: "270 000 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -418,7 +434,7 @@ function Model() {
         address: "Невский проспект, 111a",
         district: "Адмиралтейский",
         area: "124",
-        investment: "880 000 USD",
+        investment: "52 800 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -439,7 +455,7 @@ function Model() {
         address: "Невский проспект, 111с",
         district: "Адмиралтейский",
         area: "150",
-        investment: "990 000 USD",
+        investment: "59 400 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -460,7 +476,7 @@ function Model() {
         address: "Большой проспект П.С., 51",
         district: "Адмиралтейский",
         area: "177",
-        investment: "360 000 USD",
+        investment: "21 600 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -481,7 +497,7 @@ function Model() {
         address: "Большой проспект П.С., 51",
         district: "Адмиралтейский",
         area: "214",
-        investment: "1 500 000 USD",
+        investment: "90 000 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -502,7 +518,7 @@ function Model() {
         address: "Большеохтинский проспект, 25",
         district: "Адмиралтейский",
         area: "176",
-        investment: "360 000 USD",
+        investment: "21 600 000 руб",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -523,7 +539,7 @@ function Model() {
         address: "Свердловская набережная, 60",
         district: "Адмиралтейский",
         area: "11 221",
-        investment: "12 000 000 USD",
+        investment: "720 000 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -544,7 +560,7 @@ function Model() {
         address: "Наб. канала Грибоедова, 12",
         district: "Адмиралтейский",
         area: "818",
-        investment: "10 000 000 USD",
+        investment: "600 000 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -565,7 +581,7 @@ function Model() {
         address: "Невский проспект, 54-31",
         district: "Адмиралтейский",
         area: "313",
-        investment: "2 330 000 USD",
+        investment: "138 000 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -586,7 +602,7 @@ function Model() {
         address: "Невский проспект, 54-33",
         district: "Адмиралтейский",
         area: "215",
-        investment: "1 600 000 USD",
+        investment: "9 600 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -607,7 +623,7 @@ function Model() {
         address: "Наб. канала Грибоедова, 10-3,4",
         district: "Адмиралтейский",
         area: "134",
-        investment: "1 700 000 USD",
+        investment: "10 200 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",
@@ -628,7 +644,7 @@ function Model() {
         address: "Невский проспект, 32",
         district: "Адмиралтейский",
         area: "1 500",
-        investment: "15 000 000 USD",
+        investment: "90 000 000 руб.",
         profitability: "10%",
         ips: "Собственность",
         type: "Нежилое помещение",

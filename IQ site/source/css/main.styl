@@ -27,9 +27,11 @@ body
   color $text-white
   font-size 18px
   &__title 
+    display inline-block
     font-size 200px
     margin-top 0
     margin-bottom 30px
+    cursor pointer
   &__company-name 
     color $gold
     display block
@@ -49,10 +51,60 @@ body
     padding-bottom 3px
     border none
     border-bottom 1px solid
+  &__button
+    display block
+    margin auto
+    margin-top 20px
+    padding 10px 20px
+    background-color $bg-black
+    color $text-white
+    font-size 20px
+    line-height 18px
+    outline none
+    border none
   &__form
     margin-top 20px
   &__input
     color $text-black
+  &__popup
+    position absolute
+    color $text-black
+    width 400px
+    left 50%
+    top 18%
+    padding 50px 10px
+    margin-left -200px
+    background-color $white
+    transition all 0.3s cubic-bezier(.5,1.8,.9,.8)
+    transform scale(0)
+    &_active
+      transform scale(1)
+    &-close 
+      width 20px
+      height 20px
+      display block
+      position absolute
+      right 10px
+      top 10px
+      text-indent -1000px
+      font-size 10px
+      overflow hidden
+      color $text-black
+      &:after
+        content '\00D7'
+        font-size 28px
+        line-height 10px
+        position absolute
+        width 10px
+        height 10px
+        display block
+        margin auto
+        cursor pointer
+        left 0
+        top 0
+        right 0
+        bottom 0
+        text-indent 0
 
 .objects
   background-color $white
